@@ -13,16 +13,14 @@ describe('Google search page', function() {
     expect(googleMain.title()).toEqual('Google');
   });
 
-  it("should find enable keywords input", function(){
+  it("should keywords input be enabled", function(){
     expect(googleMain.searchEnabled()).toBe(true);
   });
   
   it("should get results for provided keyword", function(){
-    googleMain.setKeyword('Koty domowe');
+    googleMain.setKeyword('Ride manic');
     googleMain.submit();
-    
     googleResult = new GoogleResultPage();
-
     expect(googleResult.numberOfResults()).toBeGreaterThan(0);
   });
 });
